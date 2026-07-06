@@ -833,6 +833,51 @@
         
     </div>
 </div>
+
+
+<div id="custom-lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-red-500 text-5xl cursor-pointer z-50">&times;</button>
+    <div id="lightbox-content" class="w-full max-w-sm aspect-[9/16] bg-black rounded-xl overflow-hidden relative shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+        </div>
+</div>
+
+<script>
+    function openLightbox(urlOrId, type) {
+        const lightbox = document.getElementById('custom-lightbox');
+        const content = document.getElementById('lightbox-content');
+        
+        // youtube-short အမျိုးအစားဖြစ်လျှင် Video ID ကိုယူပြီး Link အပြည့်ပြောင်းပေးမည်
+        if (type === 'youtube-short') {
+            let embedUrl = `https://www.youtube.com/embed/${urlOrId}?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0`;
+            content.innerHTML = `<iframe src="${embedUrl}" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } 
+        // အခြား Iframe များအတွက်
+        else if (type === 'iframe') {
+            let newUrl = urlOrId + "?autoplay=1&mute=0&controls=1";
+            content.innerHTML = `<iframe src="${newUrl}" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        }
+        
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        
+        // Popup ပေါ်နေစဉ် နောက်ခံစာမျက်နှာကို Scroll ဆွဲမရအောင် ပိတ်ထားမည်
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('custom-lightbox');
+        const content = document.getElementById('lightbox-content');
+        
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        
+        // Iframe ကို ဖျက်ထုတ်လိုက်မှသာ Video အသံ ပါ ရပ်သွားမည်
+        content.innerHTML = ''; 
+        
+        // နောက်ခံစာမျက်နှာကို Scroll ပြန်ဆွဲခွင့်ပြုမည်
+        document.body.style.overflow = 'auto';
+    }
+</script>
     </section>
 
     <!-- 7. THE HUMAN ABOUT ELEMENT -->
