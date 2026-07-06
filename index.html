@@ -811,7 +811,7 @@
             </div>
 
             <!-- VIDEO PRODUCTION PART -->
-            <div class="mt-24">
+           <div class="mt-24">
     <h3 class="font-display text-2xl font-bold mb-8 text-white reveal tracking-wide">Video Production</h3>
     
     <div class="grid grid-cols-3 gap-2 md:gap-6 mb-8 reveal">
@@ -833,45 +833,6 @@
         
     </div>
 </div>
-
-
-<div id="custom-lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4">
-    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-red-500 text-5xl cursor-pointer z-50">&times;</button>
-    <div id="lightbox-content" class="w-full max-w-sm aspect-[9/16] bg-black rounded-xl overflow-hidden relative shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-        </div>
-</div>
-
-<script>
-    function openLightbox(urlOrId, type) {
-        const lightbox = document.getElementById('custom-lightbox');
-        const content = document.getElementById('lightbox-content');
-        
-        // Iframe Permission အပြည့်အစုံ ထည့်ထားပါသည်
-        if (type === 'youtube-short') {
-            let embedUrl = `https://www.youtube.com/embed/${urlOrId}?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0`;
-            content.innerHTML = `<iframe src="${embedUrl}" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-        } 
-        else if (type === 'iframe') {
-            let newUrl = urlOrId + "?autoplay=1&mute=0&controls=1";
-            content.innerHTML = `<iframe src="${newUrl}" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-        }
-        
-        lightbox.classList.remove('hidden');
-        lightbox.classList.add('flex');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        const lightbox = document.getElementById('custom-lightbox');
-        const content = document.getElementById('lightbox-content');
-        
-        lightbox.classList.add('hidden');
-        lightbox.classList.remove('flex');
-        
-        content.innerHTML = ''; 
-        document.body.style.overflow = 'auto';
-    }
-</script>
 
     <!-- 7. THE HUMAN ABOUT ELEMENT -->
     <section id="about" class="py-24 bg-black border-t border-white/5">
