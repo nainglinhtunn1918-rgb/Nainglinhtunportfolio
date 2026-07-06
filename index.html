@@ -810,71 +810,34 @@
                 </div>
             </div>
 
-            <!-- VIDEO PRODUCTION (9:16 YouTube Shorts / TikTok Reel Size) -->
-            <div class="mb-24 reveal">
-    <h3 class="font-display text-2xl font-bold mb-8 text-white tracking-wide">Video Production</h3>
-    
-    <div class="relative w-full overflow-hidden z-20">
-        <style>
-            .video-scroll-track::-webkit-scrollbar { display: none; }
-            .iframe-container iframe {
-                width: 100%;
-                height: 130%;
-                margin-top: -15%;
-                pointer-events: none; /* YouTube ပေါ်မှာ Click နှိပ်လို့မရအောင် ပိတ်ထားသည် */
-            }
-        </style>
-        
-        <div class="flex w-full overflow-x-auto cursor-grab active:cursor-grabbing auto-scroll-track video-scroll-track" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
-            
-            <div class="flex items-center gap-4 md:gap-6 pr-4 md:pr-6 flex-shrink-0 scroll-set">
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/yxLvjSEAvZ8', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/yxLvjSEAvZ8?autoplay=1&mute=1&loop=1&playlist=yxLvjSEAvZ8&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
+            <!-- VIDEO PRODUCTION PART -->
+            <div class="mt-24">
+                <h3 class="font-display text-2xl font-bold mb-8 text-white reveal tracking-wide">Video Production</h3>
                 
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/81vfx8OByGk', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/81vfx8OByGk?autoplay=1&mute=1&loop=1&playlist=81vfx8OByGk&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <!-- 3x1 Grid on Mobile -->
+                <div class="grid grid-cols-3 gap-2 md:gap-6 mb-8 reveal">
+                    <!-- Video Block 1 -->
+                    <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('Q9OExgpdSz4', 'youtube-short')">
+                        <iframe src="https://www.youtube.com/embed/yxLvjSEAvZ8?autoplay=1&mute=1&loop=1&playlist=Q9OExgpdSz4&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
+                        <!-- Transparent overlay to catch clicks instead of the iframe -->
+                        <div class="absolute inset-0 z-10 bg-transparent"></div>
                     </div>
-                </div>
-                
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/4gP1SA-Prck', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/4gP1SA-Prck?autoplay=1&mute=1&loop=1&playlist=4gP1SA-Prck&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    
+                    <!-- Video Block 2 -->
+                    <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('hiY1v1-H5b0', 'youtube-short')">
+                        <iframe src="https://www.youtube.com/embed/81vfx8OByGk?autoplay=1&mute=1&loop=1&playlist=hiY1v1-H5b0&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
+                        <div class="absolute inset-0 z-10 bg-transparent"></div>
+                    </div>
+
+                    <!-- Video Block 3 -->
+                    <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('oS7ad4jZ3Ks', 'youtube-short')">
+                        <iframe src="https://www.youtube.com/embed/4gP1SA-Prck?autoplay=1&mute=1&loop=1&playlist=oS7ad4jZ3Ks&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
+                        <div class="absolute inset-0 z-10 bg-transparent"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex items-center gap-4 md:gap-6 pr-4 md:pr-6 flex-shrink-0 scroll-set">
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/yxLvjSEAvZ8', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/yxLvjSEAvZ8?autoplay=1&mute=1&loop=1&playlist=yxLvjSEAvZ8&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-                
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/81vfx8OByGk', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/81vfx8OByGk?autoplay=1&mute=1&loop=1&playlist=81vfx8OByGk&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-                
-                <div class="w-[60vw] md:w-[320px] lg:w-[360px] flex-shrink-0 aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)] relative iframe-container" onclick="if(!window.isDraggingFlag) openLightbox('https://www.youtube.com/embed/4gP1SA-Prck', 'iframe')">
-                    <iframe src="https://www.youtube.com/embed/4gP1SA-Prck?autoplay=1&mute=1&loop=1&playlist=4gP1SA-Prck&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="transition-transform duration-700 group-hover:scale-105"></iframe>
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
-                        <svg class="w-12 h-12 text-white/70 group-hover:text-brand transition-colors drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-</div>
     </section>
 
     <!-- 7. THE HUMAN ABOUT ELEMENT -->
