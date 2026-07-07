@@ -811,73 +811,60 @@
             </div>
 
             <!-- VIDEO PRODUCTION PART -->
-           <!-- Video Section -->
-<div class="mt-24">
-    <!-- Translated to Burmese: ဗီဒီယိုထုတ်လုပ်မှု (Video Production) -->
+           <div class="mt-24">
     <h3 class="font-display text-2xl font-bold mb-8 text-white reveal tracking-wide">ဗီဒီယိုထုတ်လုပ်မှု</h3>
     
     <div class="grid grid-cols-3 gap-2 md:gap-6 mb-8 reveal">
-        
-        <!-- Video 1 -->
         <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('yxLvjSEAvZ8')">
             <iframe src="https://www.youtube.com/embed/yxLvjSEAvZ8?autoplay=1&mute=1&loop=1&playlist=yxLvjSEAvZ8&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
             <div class="absolute inset-0 z-10 bg-transparent"></div>
         </div>
         
-        <!-- Video 2 -->
         <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('81vfx8OByGk')">
             <iframe src="https://www.youtube.com/embed/81vfx8OByGk?autoplay=1&mute=1&loop=1&playlist=81vfx8OByGk&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
             <div class="absolute inset-0 z-10 bg-transparent"></div>
         </div>
 
-        <!-- Video 3 -->
         <div class="relative aspect-[9/16] bg-[#000000] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#0000FF]/50 transition-all duration-500 flex items-center justify-center cursor-pointer" onclick="openLightbox('4gP1SA-Prck')">
             <iframe src="https://www.youtube.com/embed/4gP1SA-Prck?autoplay=1&mute=1&loop=1&playlist=4gP1SA-Prck&controls=0&modestbranding=1&playsinline=1&rel=0" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-100 scale-[1.05]" frameborder="0" allow="autoplay; fullscreen" tabindex="-1"></iframe>
             <div class="absolute inset-0 z-10 bg-transparent"></div>
         </div>
-        
     </div>
 </div>
 
-<!-- Lightbox Container (Hidden by default) -->
-<div id="videoLightbox" class="fixed inset-0 z-50 hidden bg-black/95 items-center justify-center p-4">
-    <!-- Close Button -->
-    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-[60] cursor-pointer">&times;</button>
+<div id="videoLightbox" class="fixed inset-0 z-[100] hidden bg-black/95 items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-[101] cursor-pointer">&times;</button>
     
-    <!-- Fullscreen Video Wrapper -->
-    <div class="w-full max-w-[400px] aspect-[9/16] relative">
-        <iframe 
-            id="lightboxIframe" 
-            class="w-full h-full rounded-xl shadow-2xl" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
-            allowfullscreen>
-        </iframe>
+    <div class="w-full max-w-[400px] aspect-[9/16] relative bg-black rounded-xl overflow-hidden shadow-2xl">
+        <div id="lightboxIframeWrapper" class="w-full h-full"></div>
     </div>
 </div>
 
-<!-- Lightbox Logic -->
 <script>
     function openLightbox(videoId) {
         const lightbox = document.getElementById('videoLightbox');
-        const iframe = document.getElementById('lightboxIframe');
+        const wrapper = document.getElementById('lightboxIframeWrapper');
         
-        // Loads the video with Autoplay ON, Sound ON (mute=0), and UI controls ON
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1&rel=0&playsinline=1`;
+        // Iframe ကို dynamically ထည့်ခြင်း (Autoplay & Sound အတွက်)
+        wrapper.innerHTML = `<iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1&rel=0&playsinline=1" 
+            class="w-full h-full" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+            allowfullscreen>
+        </iframe>`;
         
-        // Show the lightbox overlay
         lightbox.classList.remove('hidden');
         lightbox.classList.add('flex');
     }
 
     function closeLightbox() {
         const lightbox = document.getElementById('videoLightbox');
-        const iframe = document.getElementById('lightboxIframe');
+        const wrapper = document.getElementById('lightboxIframeWrapper');
         
-        // Remove the source to stop the video/sound from playing in the background
-        iframe.src = ''; 
+        // အထဲက content ကို ဖျက်လိုက်ခြင်းဖြင့် video ကို ရပ်တန့်စေသည်
+        wrapper.innerHTML = '';
         
-        // Hide the lightbox overlay
         lightbox.classList.add('hidden');
         lightbox.classList.remove('flex');
     }
